@@ -9,4 +9,10 @@ def getAllRecords(request):
 	serializer = FishSerializer(fishset, many=True)
 	return Response(serializer.data)
 
+@api_view(['POST'])
+def createRecords(request):
+	serializer = FishSerializer(data=request.data)
+	if serializer.is_valid():
+		serializer.save()
+	return Response(serializer.data)
 # Create your views here.
