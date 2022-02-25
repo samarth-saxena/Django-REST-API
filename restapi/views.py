@@ -5,7 +5,7 @@ from restapi.serializers import FishSerializer
 
 @api_view(['GET'])
 def getAllRecords(request):
-	fishset = Fish.objects.all()
+	fishset = Fish.objects.all().order_by('-timestamp')
 	serializer = FishSerializer(fishset, many=True)
 	return Response(serializer.data)
 
