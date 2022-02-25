@@ -1,7 +1,8 @@
 ## Setup
 Start virtual environment:
 
-```python3 -m venv taskenv
+```
+python3 -m venv taskenv
 source taskenv/bin/activate
 ```
 
